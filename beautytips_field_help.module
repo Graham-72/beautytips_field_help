@@ -1,0 +1,10 @@
+<?php
+
+/**
+ * Implements hook_form_alter()
+ */
+function beautytips_field_help_form_alter(&$form, &$form_state, $form_id) {
+  $form['#attached']['js'] = array(
+    drupal_get_path('module', 'beautytips_field_help') .'/js/beautytips_field_help.js',
+  );
+}

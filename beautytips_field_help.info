@@ -1,0 +1,5 @@
+name = Beautytips Field Help
+description = Displays field help text in a beautytip tooltip
+core = 7.x
+package = User Interface
+dependencies[] = beautytips
