@@ -13,6 +13,14 @@
           $('div.description', this).hide();
         }
       });
+      $('.text-format-wrapper').each(function() {
+        if ($(this).children('div.description').length > 0) {
+          var desc = $(this).children('div.description').first().html();
+          $(this).children('div.form-item').first().children('label').append('<img src="/misc/help.png" alt="Help" />');
+          $(this).children('div.form-item').first().children('label').first().children('img').first().bt(desc, style);
+          $('div.description', this).hide();
+        }
+      });
     }
   }
 })(jQuery);
