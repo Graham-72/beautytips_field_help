@@ -1,10 +1,18 @@
 <?php
 
 /**
+ * @file
+ * Adds an icon to form labels and displays help text in beautytips
+ */
+
+/**
  * Implements hook_form_alter()
  */
 function beautytips_field_help_form_alter(&$form, &$form_state, $form_id) {
+  $settings = array('style' => beautytips_get_style(variable_get('beautytips_default_style', 'plain')));
+  beautytips_add_beautytips();
   $form['#attached']['js'] = array(
+    array('data' => array('beautytips_field_help' => $settings), 'type' => 'setting'),
     drupal_get_path('module', 'beautytips_field_help') .'/js/beautytips_field_help.js',
   );
 }
